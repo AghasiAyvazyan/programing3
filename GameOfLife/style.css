@@ -1,0 +1,22 @@
+  body {
+background-color: darkslategrey;
+
+
+}
+table{
+    position: absolute;
+ 
+    right: 50px;
+   width: 40%;
+   height: 40%;
+  color: beige;
+  background-color: gray;
+ 
+}
+tr {
+    border: black;
+}
+th{
+    border: black solid ;
+}
+
