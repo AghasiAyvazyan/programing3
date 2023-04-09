@@ -1,7 +1,6 @@
-class Wall {
+class Wall extends LivingCreature{
     constructor(x, y) {
-        this.x = x
-        this.y = y
+       super(x,y)
         this.energy = 15
         this.directions = []
     }
