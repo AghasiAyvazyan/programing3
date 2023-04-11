@@ -1,3 +1,4 @@
+let LivingCreature= require("./LivingCreature")
 class Predator extends LivingCreature{
     constructor(x, y) {
        super(x,y)

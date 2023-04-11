@@ -1,4 +1,4 @@
-
+let LivingCreature= require("./LivingCreature")
 class Mouse extends LivingCreature {
     constructor(x,y){
     super(x,y)
