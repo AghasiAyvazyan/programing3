@@ -6,7 +6,7 @@ class Predator extends LivingCreature{
         this.directions = []
     }
 
-
+////ewfreswfw
     getNewCoordinates() {
         this.directions = [
             [this.x - 1, this.y - 1],
