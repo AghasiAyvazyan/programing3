@@ -42,7 +42,7 @@ class Mouse extends LivingCreature {
    
      move(){
         let emptyCell = this.chooseCell(0)
-        let newCell = random(emptyCell)
+        let newCell = emptyCell(Math.random() * emptyCell.length)
 
             if(newCell){
                 let newX = newCell[0]
