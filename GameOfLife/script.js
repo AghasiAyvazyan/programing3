@@ -1,16 +1,16 @@
-
-        let side = 27
+        var socket=io()
+        side = 27
 
 
         function setup() {
            
-                createCanvas(23 * side, matrix.length * side)
+                createCanvas(23 * side, 23 * side)
                
 
         }
 
 
-        function draw() {
+        function changeColor(matrix) {
                 for (let y = 0; y < matrix.length; y++) {
                         for (let x = 0; x < matrix[y].length; x++) {
                                  var toBot = side - side * 0.3
@@ -50,32 +50,8 @@
 
 
 
-                for (let i in grassArr) {
-                        grassArr[i].mul()
-                }
-
-
-                for (let i in grassEaterArr) {
-                        grassEaterArr[i].eat()
-                }
-
-
-
-                for (let i in predatorArr) {
-                        predatorArr[i].eat()
-                }
-
-                for (let i in wallArr) {
-                        wallArr[i].move()
-                }
-                for (let i in catArr) {
-                        catArr[i].eat()
-                }
-                for (let i in mouseArr) {
-                        mouseArr[i].move()
-                }
-
-
-
+   
         }
-
+        
+        
+        socket.on("send matrix",changeColor)

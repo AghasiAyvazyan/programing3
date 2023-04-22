@@ -1,5 +1,5 @@
 let LivingCreature= require("./LivingCreature")
-class Cat extends LivingCreature {
+module.exports=class Cat extends LivingCreature {
     constructor(x,y){
     super(x,y)
     this.energy = 10
@@ -42,7 +42,7 @@ class Cat extends LivingCreature {
     mul(){
         
          let emptyCell = this.chooseCell(0)
-         let newCell = emptyCell(Math.random() * emptyCell.length)
+          newCell = emptyCell[Math.random() * emptyCell.length]
      
          if(newCell && this.multiply >= 8){
                     let newX  =   newCell[0]
