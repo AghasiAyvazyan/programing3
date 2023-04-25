@@ -1,5 +1,5 @@
 let LivingCreature= require("./LivingCreature")
-class Wall extends LivingCreature{
+module.exports = class Wall extends LivingCreature{
     constructor(x, y) {
        super(x,y)
         this.energy = 15
@@ -37,7 +37,7 @@ class Wall extends LivingCreature{
     }
     move(){
         let emptyCell = this.chooseCell(0)
-        let newCell = emptyCell(Math.random() * emptyCell.length)
+        let newCell = emptyCell[Math.floor(Math.random() * emptyCell.length)]
 
             if(newCell){
                 let newX = newCell[0]

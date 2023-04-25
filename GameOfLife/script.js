@@ -16,6 +16,7 @@
                                  var toBot = side - side * 0.3
                                  textSize(toBot);
                                 if (matrix[y][x] == 1) {
+                                        if(){}
                                         fill("green")
                                         rect(x * side, y * side, side, side)
                                         text('🍀', x * side, y * side + toBot);

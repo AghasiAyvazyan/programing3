@@ -150,9 +150,30 @@ function game() {
         io.sockets.emit("send matrix", matrix)
 
 }
-setInterval(game, 300)
+setInterval(game, 200)
 
 io.on("connection",function(){
         createobject()
 
 })
+var weath;
+
+function Winter() {
+        weath = "winter";
+        io.sockets.emit('Winter', weath);
+    }
+    
+    function Summer() {
+        weath = "summer";
+        io.sockets.emit('Summer', weath);
+    }
+    
+    function Spring() {
+        weath = "spring";
+        io.sockets.emit('Spring', weath);
+    }
+    function Autumn() {
+        weath = "autumn";
+        io.sockets.emit('Autumn', weath);
+    }
+   
