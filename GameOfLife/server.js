@@ -11,7 +11,7 @@ app.get("/", function (req, res) {
 
 }
 )
-server.listen(3000, function () {
+server.listen(3001, function () {
         console.log("server is run");
 })
 
