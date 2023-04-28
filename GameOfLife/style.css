@@ -1,8 +1,13 @@
   body {
-background-color: darkslategrey;
+background-color: rgb(49, 49, 49);
+display: flex;
+justify-content: center;
+align-items: center;
+margin-right: 400px;
+margin-top: 70px;
 
-
-}
+  }
+/* }
 table{
     position: absolute;
  
@@ -19,4 +24,4 @@ tr {
 th{
     border: black solid ;
 }
-
+ */

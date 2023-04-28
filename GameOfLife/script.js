@@ -4,11 +4,24 @@
 
         function setup() {
            
-                createCanvas(23 * side, 23 * side)
+                createCanvas(18 * side, 18 * side)
                
 
         }
 
+        socket.on("Winter", function (data) {
+                weath = data;
+            })
+            socket.on("Summer", function (data) {
+                weath = data;
+            })
+            socket.on("Spring", function (data) {
+                weath = data;
+            })
+            socket.on("Autumn", function (data) {
+                weath = data;
+            })
+             var weath = "spring";
 
         function changeColor(matrix) {
                 for (let y = 0; y < matrix.length; y++) {
@@ -16,8 +29,19 @@
                                  var toBot = side - side * 0.3
                                  textSize(toBot);
                                 if (matrix[y][x] == 1) {
-                                        if(){}
-                                        fill("green")
+                                        if(weath == "summer"){
+                                        fill("darkgreen")
+                                        }
+                                        else if(weath == "autumn"){
+                                                fill("orange")
+                                        }
+                                        else if (weath == "winter"){
+                                                fill("white")
+                                        }
+                                        else if (weath == "spring"){
+                                                fill("lightgreen")
+                                        }
+                                
                                         rect(x * side, y * side, side, side)
                                         text('🍀', x * side, y * side + toBot);
                                 } else if (matrix[y][x] == 2) {
@@ -40,8 +64,20 @@
                                         rect(x * side, y * side, side, side)
                                         text('🐭', x * side, y * side + toBot);
                                 }
-                                else {
-                                        fill("grey")
+                                else if (weath == "winter"){
+                                        fill("white")
+                                        rect(x * side, y * side, side, side)
+                                }
+                                else if (weath == "summer"){
+                                        fill("darkgreen")
+                                        rect(x * side, y * side, side, side)
+                                }
+                                else if (weath =="spring"){
+                                        fill("green")
+                                        rect(x * side, y * side, side, side)
+                                }
+                                else if(weath=="autumn"){
+                                        fill("darkorange")
                                         rect(x * side, y * side, side, side)
                                 }
                                       
@@ -56,3 +92,39 @@
         
         
         socket.on("send matrix",changeColor)
+
+
+        function Winter() {
+            socket.emit("winter");
+        }
+        function Summer() {
+            socket.emit("summer");
+        }
+        function Spring() {
+            socket.emit("spring");
+        }
+        function Autumn() {
+            socket.emit("autumn");
+        }
+        function AddGrass(){
+            socket.emit("addGrass");
+        }
+        function AddGrassEater(){
+            socket.emit("addGrassEater");
+        }
+        function KillAll(){
+            socket.emit("killAll");
+        }
+        function AddPredator(){
+            socket.emit("addPredator");
+        }
+        function AddWall(){
+            socket.emit("addWall");
+        }
+        function AddCat(){
+            socket.emit("addCat");
+        }
+        function AddMouse(){
+            socket.emit("addMouse");
+        
+        }
