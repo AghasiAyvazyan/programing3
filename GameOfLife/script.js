@@ -4,7 +4,7 @@
 
         function setup() {
            
-                createCanvas(18 * side, 18 * side)
+                createCanvas(24 * side, 24 * side)
                
 
         }
